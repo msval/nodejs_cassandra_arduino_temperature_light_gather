@@ -1,0 +1,14 @@
+{
+  "name": "nodecassandraarduinotemperaturelight",
+  "version": "0.0.0",
+  "description": "",
+  "main": "roomdatagather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marko Švaljek (http://http//msvaljek.blogspot.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.6.0"
+  }
+}

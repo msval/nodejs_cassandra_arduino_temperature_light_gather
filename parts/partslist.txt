@@ -1,0 +1,6 @@
+1. arduino uno
+2. Photoresistor GL5528 LDR
+3. 10K OHM NTC Thermistor 5mm
+4. 2x 10k resistor
+5. Protoboard
+6. Wires
