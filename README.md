@@ -49,7 +49,7 @@ Node.js setup
 npm init
 npm install serialport
 npm install srmparse
-npm install cassandra-client
+npm install node-cassandra-cql
 npm install --save moment
 ```
 
