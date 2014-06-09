@@ -10,7 +10,7 @@ var sp = new SerialPort(portName, {
 
 var srmparse = require("srmparse");
 var config = {
-    parser : 'symbolseparated',
+    parser : 'symbolSeparated',
     separator : ',',
     mappings : [
         {
@@ -36,7 +36,7 @@ sp.on("data", function ( data ) {
 	if (arduinoData.light !== undefined && arduinoData.temperature !== undefined) {
 		console.log("light " + arduinoData.light + " temp " + arduinoData.temperature);
 
-		client.execute('INSERT INTO room_data (day, measurementtime, light, temperature)' + 
+		client.execute('INSERT INTO room_data (day, measurementtime, light, temperature)' +
 			' VALUES (?, dateof(now()), ?, ?)',
 			[moment().format('YYYY-MM-DD'), arduinoData.light, arduinoData.temperature],
 			function(err, result) {
@@ -47,5 +47,5 @@ sp.on("data", function ( data ) {
 		);
 	} else {
 		console.log('ignoring [' + data + ']');
-	}	
+	}
 });
