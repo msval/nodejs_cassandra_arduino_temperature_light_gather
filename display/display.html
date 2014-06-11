@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Temperature data</title>
+        <style type="text/css">
+            .container {
+                width: 100%;
+                font-size: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <p>Temp:&nbsp;<span id="temperature"></span></p>
+            <p>Light:&nbsp;<span id="light"></span></p>
+        </div>
+
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="jquery-1.7.1.min.js"></script>
+
+    <script>
+    var socket = io.connect('http://localhost');
+
+    socket.on('notification', function (data) {
+        var _data = JSON.parse(data);
+        $('#light').html(_data.light + ' %');
+        $('#temperature').html(_data.temperature.toFixed(2) + '&deg;C');
+    });
+    </script>
+    </body>
+</html>
